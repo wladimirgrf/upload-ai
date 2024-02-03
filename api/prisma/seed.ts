@@ -25,14 +25,15 @@ Return ONLY the three titles in a list format as shown below:
 Transcription:
 '''
 {transcription}
-'''`.trim()
-    }
+'''`.trim(),
+    },
   })
 
   await prisma.prompt.create({
     data: {
       title: 'YouTube Description',
-      template: `Your role is to generate a concise description for a YouTube video.
+      template:
+        `Your role is to generate a concise description for a YouTube video.
 
 Below, you will receive a transcription of this video; use this transcription to create the description.
 
@@ -52,8 +53,8 @@ Description.
 Transcription:
 '''
 {transcription}
-'''`.trim()
-    }
+'''`.trim(),
+    },
   })
 }
 
