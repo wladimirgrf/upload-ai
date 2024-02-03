@@ -35,7 +35,7 @@ export function App() {
       temperature,
     },
     headers: {
-      'Content-type': 'application/json',
+      'Content-Type': 'application/json',
     },
   })
 
