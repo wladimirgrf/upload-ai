@@ -3,6 +3,13 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wladimirgrf/upload-ai"
+  },
+  "description": "merge video transcripts with customizable AI prompts",
+  "author": "Wladimir <wladimir.code@gmail.com>",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
