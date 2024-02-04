@@ -1,4 +1,0 @@
-.env
-tmp/*
-!tmp/.gitkeep
-dev.db

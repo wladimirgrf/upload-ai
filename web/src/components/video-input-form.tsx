@@ -1,13 +1,13 @@
-import { FileVideo, Upload } from "lucide-react";
-import { ChangeEvent, FormEvent, useMemo, useRef, useState } from "react";
-import { fetchFile } from "@ffmpeg/util";
+import { FileVideo, Upload } from 'lucide-react'
+import { ChangeEvent, FormEvent, useMemo, useRef, useState } from 'react'
+import { fetchFile } from '@ffmpeg/util'
 
-import { getFFmpeg } from "@/lib/ffmpeg";
-import { Separator } from "./ui/separator";
-import { Label } from "./ui/label";
-import { Textarea } from "./ui/textarea";
-import { Button } from "./ui/button";
-import { api } from "@/lib/axios";
+import { getFFmpeg } from '@/lib/ffmpeg'
+import { Separator } from './ui/separator'
+import { Label } from './ui/label'
+import { Textarea } from './ui/textarea'
+import { Button } from './ui/button'
+import { api } from '@/lib/axios'
 
 type Status = 'waiting' | 'converting' | 'uploading' | 'generating' | 'success'
 
@@ -15,7 +15,7 @@ const statusMessages = {
   converting: 'Converting...',
   uploading: 'Uploading...',
   generating: 'Generating...',
-  success: 'Success!'
+  success: 'Success!',
 }
 
 interface VideoInputFormProps {
@@ -29,18 +29,18 @@ export function VideoInputForm(props: VideoInputFormProps) {
   const promptInputRef = useRef<HTMLTextAreaElement>(null)
 
   function handleFileSelected(event: ChangeEvent<HTMLInputElement>) {
-    const { files } = event.currentTarget;
+    const { files } = event.currentTarget
 
-    if(!files) {
+    if (!files) {
       return
     }
 
-    const selectedFile = files[0];
+    const selectedFile = files[0]
 
     setVideoFile(selectedFile)
   }
 
-  async function convertVideoToAudio(video: File) { 
+  async function convertVideoToAudio(video: File) {
     console.log('Convert started!')
 
     const ffmpeg = await getFFmpeg()
@@ -51,7 +51,7 @@ export function VideoInputForm(props: VideoInputFormProps) {
     //   console.log(log)
     // })
 
-    ffmpeg.on('progress', process => {
+    ffmpeg.on('progress', (process) => {
       console.log(`Convert progress: ${Math.round(process.progress) * 100}`)
     })
 
@@ -64,14 +64,14 @@ export function VideoInputForm(props: VideoInputFormProps) {
       '20k',
       '-acodec',
       'libmp3lame',
-      'output.mp3'
+      'output.mp3',
     ])
 
     const data = await ffmpeg.readFile('output.mp3')
 
     const audioFileBlob = new Blob([data], { type: 'audio/mpeg' })
     const audioFile = new File([audioFileBlob], 'audio.mp3', {
-      type: 'audio/mpeg'
+      type: 'audio/mpeg',
     })
 
     console.log('Convert finished!')
@@ -84,7 +84,7 @@ export function VideoInputForm(props: VideoInputFormProps) {
 
     const prompt = promptInputRef.current?.value
 
-    if(!videoFile) {
+    if (!videoFile) {
       return
     }
 
@@ -92,7 +92,7 @@ export function VideoInputForm(props: VideoInputFormProps) {
 
     const audioFile = await convertVideoToAudio(videoFile)
 
-    const data  = new FormData()
+    const data = new FormData()
 
     data.append('file', audioFile)
 
@@ -114,7 +114,7 @@ export function VideoInputForm(props: VideoInputFormProps) {
   }
 
   const previewURL = useMemo(() => {
-    if(!videoFile) {
+    if (!videoFile) {
       return null
     }
 
@@ -123,13 +123,16 @@ export function VideoInputForm(props: VideoInputFormProps) {
 
   return (
     <form onSubmit={handleUploadVideo} className="space-y-6">
-      <label 
+      <label
         htmlFor="video"
         className="relative border flex rounded-md aspect-video cursor-pointer border-dashed text-sm flex-col gap-2 items-center justify-center text-muted-foreground hover:bg-primary/5"
       >
-
         {previewURL ? (
-          <video src={previewURL} controls={false} className="pointer-events-none absolute inset-0" />
+          <video
+            src={previewURL}
+            controls={false}
+            className="pointer-events-none absolute inset-0"
+          />
         ) : (
           <>
             <FileVideo className="w-4 h-4" />
@@ -138,33 +141,41 @@ export function VideoInputForm(props: VideoInputFormProps) {
         )}
       </label>
 
-      <input type="file" id="video" accept="video/mp4" className="sr-only" onChange={handleFileSelected} />
+      <input
+        type="file"
+        id="video"
+        accept="video/mp4"
+        className="sr-only"
+        onChange={handleFileSelected}
+      />
 
       <Separator />
 
       <div className="space-y-2">
         <Label htmlFor="transcription_prompt">Transcription prompt</Label>
-        <Textarea 
+        <Textarea
           ref={promptInputRef}
           disabled={status !== 'waiting'}
-          id="transcription_prompt" 
-          className="h-20 leading-relaxed resize-none" 
+          id="transcription_prompt"
+          className="h-20 leading-relaxed resize-none"
           placeholder="Include keywords mentioned in the video separated by a comma (,)"
         />
       </div>
 
-      <Button 
+      <Button
         data-success={status === 'success'}
-        disabled={status !== 'waiting'} 
-        type="submit" 
+        disabled={status !== 'waiting'}
+        type="submit"
         className="w-full data-[success=true]:bg-emerald-400"
-      > 
+      >
         {status === 'waiting' ? (
           <>
             Upload video
             <Upload className="w-4 h-4 ml-2" />
           </>
-        ) : statusMessages[status]}
+        ) : (
+          statusMessages[status]
+        )}
       </Button>
     </form>
   )
