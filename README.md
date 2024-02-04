@@ -4,8 +4,11 @@
 [![](https://img.shields.io/github/last-commit/wladimirgrf/upload-ai?color=%23FFB000&labelColor=000000)](https://github.com/wladimirgrf/certification/commits/master)
 [![](https://img.shields.io/github/issues/wladimirgrf/upload-ai?color=%23FFB000&labelColor=000000)](https://github.com/wladimirgrf/certification/issues)
 
-This project is a proof of concept for the Bitcoin's Mainnet and Testnet. 
-This RESTful API is designed to support multiple blockchain providers. Can be an external API like BlockCypher or even a full node. The goal is to ensure availability even if one of the providers is offline.
+In this project, I've structured the application into two distinct layers: the API layer, designed for video processing and integration with OpenAI, and the web layer, which facilitates user interaction and preference customization. 
+
+The goal is to generate video transcripts and use this material in AI prompts to create content based on templates. Through the app experience demonstrated below, you can see it being used to generate video descriptions or even titles. 
+
+The prompts are fully editable, allowing for customization to meet a wide array of needs.
 
 ## 🌍 Ecosystem
 
