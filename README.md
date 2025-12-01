@@ -1,31 +1,23 @@
 ### upload-ai
 
-[![](https://img.shields.io/github/repo-size/wladimirgrf/upload-ai?color=%23FFB000&labelColor=000000)]()
-[![](https://img.shields.io/github/last-commit/wladimirgrf/upload-ai?color=%23FFB000&labelColor=000000)](https://github.com/wladimirgrf/certification/commits/master)
-[![](https://img.shields.io/github/issues/wladimirgrf/upload-ai?color=%23FFB000&labelColor=000000)](https://github.com/wladimirgrf/certification/issues)
+![Node.js](https://img.shields.io/badge/Node.js-43853D?logo=node.js&logoColor=white)
+![Fastify](https://img.shields.io/badge/Fastify-000000?logo=fastify&logoColor=white)
+![Prisma](https://img.shields.io/badge/Prisma-2D3748?logo=prisma&logoColor=white)
+![Zod](https://img.shields.io/badge/Zod-3E67B1?logo=zod&logoColor=white)
+![OpenAI](https://img.shields.io/badge/OpenAI-412991?logo=openai&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB)
+![Vite](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?logo=tailwind-css&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
+![ESLint](https://img.shields.io/badge/ESLint-4B32C3?logo=eslint&logoColor=white)
+
+## 🎯 Overview
 
 In this project, I've structured the application into two distinct layers: the API layer, designed for video processing and integration with OpenAI, and the web layer, which facilitates user interaction and preference customization. 
 
 The goal is to generate video transcripts and use this material in AI prompts to create content based on templates. Through the app experience demonstrated below, you can see it being used to generate video descriptions or even titles. 
 
 The prompts are fully editable, allowing for customization to meet a wide array of needs.
-
-## 🌍 Ecosystem
-
-Below the frameworks, used to build the APP:
-
-|                      Name                                   |                         Status                          |
-|:-----------------------------------------------------------:|:-------------------------------------------------------:|
-|<img height="58" src="https://cdn.worldvectorlogo.com/logos/nodejs-1.svg"> | <img alt="node version" src="https://img.shields.io/badge/nodejs-v18.17-%23FFB000?labelColor=000000"> |
-|<img height="50" src="https://cdn.worldvectorlogo.com/logos/fastify.svg"> | <img alt="fastify version" src="https://img.shields.io/badge/fastify-v4.26-%23FFB000?labelColor=000000">|
-|<img height="60" src="https://cdn.worldvectorlogo.com/logos/prisma-3.svg"> | <img alt="prisma version" src="https://img.shields.io/badge/prisma-v5.9-%23FFB000?labelColor=000000">|
-|<img height="67" src="https://raw.githubusercontent.com/colinhacks/zod/master/logo.svg"> | <img alt="zod version" src="https://img.shields.io/badge/zod-v3.22-%23FFB000?labelColor=000000">|
-|<img height="53" src="https://cdn.worldvectorlogo.com/logos/openai-2.svg"> | <img alt="openai version" src="https://img.shields.io/badge/openai-v4.26-%23FFB000?labelColor=000000"> |
-|<img height="64" src="https://cdn.worldvectorlogo.com/logos/react-2.svg"> | <img alt="react version" src="https://img.shields.io/badge/react-v18.2-%23FFB000?labelColor=000000"> |
-|<img height="50" src="https://cdn.worldvectorlogo.com/logos/vitejs.svg"> | <img alt="vite version" src="https://img.shields.io/badge/vite-v4.5-%23FFB000?labelColor=000000">|
-|<img height="40" src="https://cdn.worldvectorlogo.com/logos/tailwind-css-2.svg"> | <img alt="tailwind version" src="https://img.shields.io/badge/tailwind-v3.4-%23FFB000?labelColor=000000">|
-|<img height="45" src="https://cdn.worldvectorlogo.com/logos/typescript.svg"> | <img alt="typescript version" src="https://img.shields.io/badge/typescript-v5.5-%23FFB000?labelColor=000000"> |
-|<img height="48" src="https://cdn.worldvectorlogo.com/logos/eslint-1.svg"> | <img alt="eslint version" src="https://img.shields.io/badge/eslint-v8.56-%23FFB000?labelColor=000000"> |
 
 ## 🌟 App Experience
 
